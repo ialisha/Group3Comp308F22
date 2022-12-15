@@ -1,0 +1,16 @@
+input NewDailyInfo {
+  pulseRate: String
+  bloodPressure: String
+  weight: String
+  temperature: String
+  respiratoryRate: String
+  patient: ID!
+}
+
+type Query {
+  getDailyInfo(id: ID!): dailyINFO!
+}
+
+type Mutation {
+  dailyINFOrm(generalInfo: NewDailyInfo): dailyINFO
+}

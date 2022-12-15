@@ -1,0 +1,9 @@
+type dailyINFO {
+  id: ID!
+  pulseRate: String
+  bloodPressure: String
+  weight: String
+  temperature: String
+  respiratoryRate: String
+  patient: ID!
+}

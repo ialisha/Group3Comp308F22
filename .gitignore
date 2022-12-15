@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log*
+/.env
+
+# Generated files from `graphql-codegen`
+*.gen.d.ts
+*.gen.graphql

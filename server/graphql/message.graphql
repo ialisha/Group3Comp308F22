@@ -1,0 +1,19 @@
+"""
+Message type
+"""
+type Message {
+  id: ID!
+  body: String!
+}
+
+# Mutation operations
+type Mutation {
+  """
+  Send a new message
+  """
+  sendMessage(body: String!): Message
+}
+
+type Query {
+  getMessages: [Message!]
+}

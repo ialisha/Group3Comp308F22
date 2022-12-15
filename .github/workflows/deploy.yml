@@ -1,0 +1,31 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - ".vscode/**"
+      - "**/*.md"
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: deployment
+      url: https://group4-comp308-project.herokuapp.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: group4-comp308-project
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          dontautocreate: true

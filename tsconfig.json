@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+
+    "skipLibCheck": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "alwaysStrict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "useUnknownInCatchVariables": true
+  },
+  "include": ["./.graphqlrc.js"]
+}

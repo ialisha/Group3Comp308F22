@@ -1,0 +1,14 @@
+type Alert {
+  id: ID!
+  sender: User!
+  createdAt: DateTime!
+  reason: String!
+}
+
+type Query {
+  getAlerts: [Alert!]!
+}
+
+type Mutation {
+  sendAlert(reason: String!): Alert
+}

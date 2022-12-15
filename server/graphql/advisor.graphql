@@ -1,0 +1,52 @@
+enum Sex {
+  M
+  F
+}
+
+enum SymptomLevel {
+  NEVER
+  LITTLE
+  SOME
+  SEVERE
+}
+
+input PredictionData {
+  age: Int!
+  sex: Sex!
+  chestPain: SymptomLevel!
+
+  """
+  Whether the fasting blood sugar value is over 120 mg/dl
+  """
+  fastingBloodSugar: Boolean!
+
+  """
+  Whther the patient experiences angina after exercising
+
+  (angina: a chest pain, usually due to insufficient blood to heart muscle)
+  """
+  exerciseAngina: Boolean!
+
+  """
+  Blood pressure while resting (unit: `mmHg`)
+  """
+  restingBloodPressure: Float!
+
+  """
+  Cholesterol (unit: `mg/dl`)
+  """
+  cholesterol: Float!
+
+  """
+  Maximum heart rate
+  """
+  maxHeartRate: Float!
+}
+
+type PredictionResults {
+  heartDiseaseProbability: Float!
+}
+
+type Query {
+  healthAdvice(data: PredictionData!): PredictionResults!
+}

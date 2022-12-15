@@ -1,0 +1,4 @@
+node_modules
+/client/build
+*.gen.d.ts
+*.gen.graphql

@@ -1,0 +1,35 @@
+type Query {
+  """
+  Returns the currently logged in user; null if not logged in
+  """
+  whoAmI: User
+}
+
+"""
+Minimal information needed for registering a new user
+"""
+input NewUserInput {
+  email: String!
+  password: String!
+  role: UserRole
+  firstName: String!
+  lastName: String!
+}
+
+type AuthOutput {
+  user: User!
+  token: String!
+}
+
+# Mutation operations regarding user info
+type Mutation {
+  """
+  Register a new user
+  """
+  register(accountData: NewUserInput!): AuthOutput
+
+  """
+  Request to be authorized and get a jwt
+  """
+  signIn(email: String!, password: String!): AuthOutput
+}

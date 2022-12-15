@@ -1,0 +1,18 @@
+# This is an example showing that a type does not have to be defined at a single
+# place. Even the `extend` is not needed. It is just there for us to easily
+# recognise that it is being extended.
+extend type User {
+  """
+  The designated healthcare provider for the user
+  """
+  provider: User
+}
+
+type Query {
+  """
+  Get a list of patients in charge of the requester
+
+  Returns null if the user is not a nurse
+  """
+  myPatients: [User!]
+}
